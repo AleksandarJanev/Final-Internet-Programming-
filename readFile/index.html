@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<script type="text/javascript">
+    function ReadFile(){
+        fileToRead=document.getElementById("inputFile").value
+    if (window.XMLHttpRequest) {
+            xmlhttp =  new XMLHttpRequest(); //Not IE
+        } else if(window.ActiveXObject) {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); //IE
+        } else {
+            alert("Your browser doesn't support the XmlHttpRequest object.");
+        }
+
+    xmlhttp.onreadystatechange=function(){
+  	if (xmlhttp.readyState==4 && xmlhttp.status==200){
+		    document.getElementById("result").innerHTML=xmlhttp.responseText;
+    	}	
+  	}
+	xmlhttp.open("GET","Exam.txt",true);
+	xmlhttp.send();
+    }
+
+    </script>
+</head>
+
+<body>
+
+        
+        <input type="file" name="inputFile" id="inputFile">
+        <br>
+        <br>
+        <button type="button" onclick="ReadFile()">Submit</button>
+        <br>
+        <br>
+        <strong><div id="result" >&nbsp;</div></strong>
+
+
+</body>
+
+
+
+
+
+
+

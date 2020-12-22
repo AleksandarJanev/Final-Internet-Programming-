@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<script type="text/javascript">
+    function Random(){
+        
+    if (window.XMLHttpRequest) {
+            xmlhttp =  new XMLHttpRequest(); //Not IE
+        } else if(window.ActiveXObject) {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); //IE
+        } else {
+            alert("Your browser doesn't support the XmlHttpRequest object.");
+        }
+
+    xmlhttp.onreadystatechange=function(){
+  	if (xmlhttp.readyState==4 && xmlhttp.status==200){
+		    document.getElementById("result").innerHTML=xmlhttp.responseText;
+    	}	
+  	}
+	xmlhttp.open("GET","randnum.php",true);
+	xmlhttp.send();
+    }
+
+    </script>
+</head>
+
+<body>
+
+        
+        <button type="button" onclick="Random()">Get Random Number</button>
+        <br>
+        <br>
+        <strong><div id="result" >&nbsp;</div></strong>
+        
+        
+
+</body>
+
+
+
+
+
+
+
